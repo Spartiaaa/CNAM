@@ -14,7 +14,7 @@ engine = create_engine(
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 # Déclarative Base pour ORM
-Base = declarative_base()  # ✅ c'est ce qu'il faut importer dans main.py
+Base = declarative_base()  
 
 # Dépendance pour FastAPI
 def get_db():

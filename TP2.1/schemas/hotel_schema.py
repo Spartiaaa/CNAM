@@ -7,7 +7,7 @@ class HotelBase(BaseModel):
     adresse: str
 
 class HotelCreate(HotelBase):
-    pass  # héritage pour création
+    pass  
 
 class HotelInDB(HotelBase):
     id: int

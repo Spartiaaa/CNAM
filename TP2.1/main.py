@@ -4,6 +4,7 @@ from api.v1.chambre_routeur import routeur as chambre_routeur
 from api.v1.hotel_routeur import routeur as hotel_router
 from api.v1.client_routeur import routeur as client_router
 from api.v1.reservation_routeur import routeur as reservation_router
+from api.v1.main_routeur import routeur as main_router
 
 # Crée les tables
 Base.metadata.create_all(bind=engine)
@@ -15,3 +16,4 @@ app.include_router(hotel_router)
 app.include_router(chambre_routeur)
 app.include_router(client_router)
 app.include_router(reservation_router)
+app.include_router(main_router)

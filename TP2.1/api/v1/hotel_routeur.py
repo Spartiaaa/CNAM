@@ -16,9 +16,8 @@ routeur = APIRouter(
 # Instanciation du Service
 hotel_service = HotelService()
 
-@routeur.post("/create", response_model=HotelInDB)  # "/" car le prefix est déjà "/hotels"
+@routeur.post("/create", response_model=HotelInDB)  
 def create_hotel(hotel: HotelCreate, db: Session = Depends(get_db)):
-    # Logique pour créer l'hôtel via le service
     new_hotel = hotel_service.create_hotel(db=db, hotel=hotel)
     return new_hotel
 

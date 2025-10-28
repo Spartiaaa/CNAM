@@ -1,9 +1,8 @@
 from sqlalchemy import Column, Integer, Date, ForeignKey, Enum
 from sqlalchemy.orm import relationship
 from database.base import Base
-# Définition pour une table 'réservation'
 
-class Reservation(Base): # ou Model, selon votre configuration
+class Reservation(Base): 
     
     __tablename__ = "reservation"
 
