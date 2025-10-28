@@ -16,7 +16,7 @@ routeur = APIRouter(
 # Instanciation du Service
 hotel_service = HotelService()
 
-@routeur.post("/", response_model=HotelInDB)  # "/" car le prefix est déjà "/hotels"
+@routeur.post("/create", response_model=HotelInDB)  # "/" car le prefix est déjà "/hotels"
 def create_hotel(hotel: HotelCreate, db: Session = Depends(get_db)):
     # Logique pour créer l'hôtel via le service
     new_hotel = hotel_service.create_hotel(db=db, hotel=hotel)
@@ -26,7 +26,7 @@ def create_hotel(hotel: HotelCreate, db: Session = Depends(get_db)):
 def list_hotels(db: Session = Depends(get_db)):
     return hotel_service.list_hotels(db=db)
 
-@routeur.get("/{hotel_id}", response_model=HotelInDB)
+@routeur.get("/get/{hotel_id}", response_model=HotelInDB)
 def get_hotel(hotel_id: int, db: Session = Depends(get_db)):
     hotel = hotel_service.get_hotel(db=db, hotel_id=hotel_id)
     if not hotel:

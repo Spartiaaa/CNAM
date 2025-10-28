@@ -18,5 +18,13 @@ class HotelService:
     
     def get_hotel(self, db: Session, hotel_id: int) -> HotelInDB:
         return db.query(Hotel).filter(Hotel.id == hotel_id).first()
+    
+    def delete_hotel(self, db: Session, hotel_id: int) -> bool:
+        hotel = db.query(Hotel).filter(Hotel.id == hotel_id).first()
+        if hotel:
+            db.delete(hotel)
+            db.commit()
+            return True
+        return False
 
     

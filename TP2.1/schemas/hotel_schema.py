@@ -1,5 +1,6 @@
 # schemas/hotel_schema.py
 from pydantic import BaseModel
+from typing import Optional
 
 class HotelBase(BaseModel):
     nom: str

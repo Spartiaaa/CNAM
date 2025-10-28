@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from typing import Optional
 
 class ChambreBase(BaseModel):
     numero: int
@@ -15,3 +16,11 @@ class ChambreInDB(ChambreBase):
     model_config = {
         "from_attributes": True
     }
+
+class ChambreUpdate(BaseModel):
+    numero: Optional[int] = None 
+    type: Optional[str] = None
+    prix : Optional[float] = None
+    etat : Optional[str] = None
+    hotel_id: Optional[int] = None
+
