@@ -1,8 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 
 routeur = APIRouter(
-    prefix="/",
-    tags=["main"]
+    prefix="/"
 )
 
 @routeur.get("/")
